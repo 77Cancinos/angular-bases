@@ -1,0 +1,27 @@
+<h1> Listado de Putas</h1>
+
+<div *ngIf="pupiDeleted; else nothingWasDeleted">
+  <h3>Puti Borrada: <small class="text-danger">'{{ pupiDeleted }}' </small></h3>
+</div>
+
+
+<!-- El ng-template es un valor para hacer una validación -->
+<ng-template #nothingWasDeleted>
+            <!-- Referencia Local -->
+  <h3 > No ha borrado nada </h3>
+</ng-template>
+
+
+<button *ngIf="puttyNames.length > 0" (click)="revomeLastPupi()" class="btn btn-outline-danger">
+  Borrar última pupi
+</button>
+
+
+<ul class="mt-2 list-group">
+  <li
+    *ngFor="let puti of puttyNames "
+    class="list-group-item"
+  >
+    {{ puti }}
+  </li>
+</ul>
