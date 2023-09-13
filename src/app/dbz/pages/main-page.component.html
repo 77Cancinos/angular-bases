@@ -1,0 +1,23 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- app-dbz-list manda como propiedad su characterList = el array character -->
+    <app-dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)" ></app-dbz-list>
+  </div>
+
+  <div class="col">
+    <app-dbz-add-character (onNewCharacter)="onNewCharacter($event)"></app-dbz-add-character>
+  </div>
+</div>
+
+
+<!-- Componente Padre es este -->
+
+<!-- Los componentes Hijos es app-dbz-list y el app-dbz-add-character -->
+
+<!--
+  [] => Son Atributos
+  () => Son Eventos
+ -->
